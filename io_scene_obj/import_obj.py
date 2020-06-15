@@ -140,8 +140,7 @@ def create_materials(filepath, relpath,
     from math import sqrt
     from bpy_extras import node_shader_utils
 
-    #     DIR = os.path.dirname(filepath)
-    DIR = 'workdir/Models/Material/material.mtl'
+    DIR = os.path.dirname(filepath)
     context_material_vars = set()
 
     # Don't load the same image multiple times
@@ -276,8 +275,11 @@ def create_materials(filepath, relpath,
                     context_mat_wrap.ior = 1.5
 
     # Try to find a MTL with the same name as the OBJ if no MTLs are specified.
-    temp_mtl = os.path.splitext((os.path.basename(filepath)))[0] + ".mtl"
-    if os.path.exists(os.path.join(DIR, temp_mtl)):
+    # temp_mtl = os.path.splitext((os.path.basename(filepath)))[0] + ".mtl"
+    # if os.path.exists(os.path.join(DIR, temp_mtl)):
+
+    temp_mtl = 'workdir/Models/Material/material.mtl'
+    if os.path.exists(temp_mtl):
         material_libs.add(temp_mtl)
     del temp_mtl
 
