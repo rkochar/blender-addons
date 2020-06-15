@@ -140,7 +140,8 @@ def create_materials(filepath, relpath,
     from math import sqrt
     from bpy_extras import node_shader_utils
 
-    DIR = os.path.dirname(filepath)
+    #     DIR = os.path.dirname(filepath)
+    DIR = 'workdir/Models/Material/material.mtl'
     context_material_vars = set()
 
     # Don't load the same image multiple times
